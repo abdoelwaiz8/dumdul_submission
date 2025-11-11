@@ -19,7 +19,7 @@ module.exports = {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
-      // ATURAN .JS SUDAH DIHAPUS DARI SINI
+      
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -31,15 +31,19 @@ module.exports = {
       filename: 'index.html',
       template: path.resolve(__dirname, 'src/index.html'),
     }),
-    new CopyWebpackPlugin({ // (Ini adalah config PWA Anda)
+    new CopyWebpackPlugin({ 
       patterns: [
         {
           from: path.resolve(__dirname, 'src/public/'),
           to: path.resolve(__dirname, 'dist/'),
           globOptions: {
-            ignore: ['**/index.html'],
+          ignore: ['**/index.html'],
           },
         },
+        {
+      from: path.resolve(__dirname, '_redirects'), 
+      to: path.resolve(__dirname, 'dist/'),     
+    },
       ],
     }),
   ],
