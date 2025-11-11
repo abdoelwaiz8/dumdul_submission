@@ -1,0 +1,47 @@
+
+{
+  "name": "Journey Journal",
+  "short_name": "Journey",
+  "description": "Bagikan jurnal perjalanan Anda di sini",
+  "start_url": "/index.html",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#0d9488",
+  "icons": [
+    {
+      "src": "images/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "images/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "images/screenshots/ss-1.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "images/screenshots/ss-2.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Tulis Cerita Baru",
+      "short_name": "Tulis",
+      "description": "Mulai menulis jurnal perjalanan baru",
+      "url": "/index.html#/add-story",
+      "icons": [{ "src": "images/shortcut-icon.png", "sizes": "96x96" }]
+    }
+  ]
+}
