@@ -1,0 +1,50 @@
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 2rem 0;
+}
+
+.login-box {
+  background-color: var(--bg-card);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius-large);
+  
+  box-shadow: none;
+  border: 1px solid var(--border-light);
+  
+  width: 100%;
+  max-width: 420px;
+}
+
+.login-box h2 {
+  font-size: 1.75rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.login-box .text-light {
+  font-size: 1rem;
+}
+
+.login-box form {
+  margin-top: 2rem;
+}
+
+.login-box .form-field:last-of-type {
+  margin-bottom: 2rem;
+}
+
+.login-box a {
+  color: var(--brand-primary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-main);
+}
+
+.login-box a:hover,
+.login-box a:focus {
+  text-decoration: underline;
+  color: var(--brand-dark);
+}

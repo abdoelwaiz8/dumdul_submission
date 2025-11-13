@@ -1,0 +1,103 @@
+/* ===== RESPONSIVE BREAKPOINTS ===== */
+
+/* Mobile (Default) */
+@media screen and (max-width: 767px) {
+  .main-header .page-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .header-nav ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+
+  .header-nav a {
+    display: block;
+    text-align: center;
+  }
+
+  .journal-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .map-display {
+    height: 300px !important;
+  }
+
+  .story-detail-layout {
+    flex-direction: column !important;
+  }
+
+  .story-detail-map {
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .page-container {
+    padding: 0 2rem;
+  }
+
+  .main-header .page-container {
+    flex-direction: row;
+  }
+
+  .header-nav ul {
+    flex-direction: row;
+  }
+
+  .journal-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .map-display {
+    height: 400px !important;
+  }
+
+  .login-box {
+    max-width: 450px !important;
+  }
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .journal-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .map-display {
+    height: 450px !important;
+  }
+
+  .story-detail-map {
+    width: 50% !important;
+    height: 400px !important;
+  }
+
+  .new-entry-form {
+    max-width: 700px !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .main-header,
+  .main-footer,
+  .button {
+    display: none;
+  }
+
+  body {
+    background: white;
+  }
+
+  .card-base {
+    box-shadow: none;
+    border: 1px solid #ddd;
+    break-inside: avoid;
+  }
+}

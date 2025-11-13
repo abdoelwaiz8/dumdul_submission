@@ -1,0 +1,343 @@
+/* ===== VARIABEL CSS TEMA PASIR (BARU) ===== */
+:root {
+  /* Palet Warna Pasir / Earth Tone */
+  --brand-primary: #C76D3A; /* Warna Terracotta / Bata */
+  --brand-dark: #A15327;   /* Versi lebih gelap */
+  --brand-light: #F7EAE3;  /* Versi lebih terang (untuk hover) */
+  
+  --accent-color: #5A8F7B; /* Aksen Hijau (seperti oasis) */
+  --danger-color: #D9534F; /* Merah yang sedikit lebih lembut */
+  
+  --text-dark: #442814;    /* Coklat tua (bukan hitam) */
+  --text-light: #77573F;   /* Coklat medium */
+  
+  --bg-main: #F5F0E8;      /* Latar belakang halaman (Warna Pasir) */
+  --bg-card: #FFFCFA;      /* Kartu (Warna Krim / Off-white) */
+  --border-light: #DDCED8; /* Border (Coklat muda keabu-abuan) */
+  
+  /* Desain (tetap sama seperti sebelumnya) */
+  --shadow-light: 0 0 0 1px var(--border-light);
+  --shadow-medium: 0 0 0 1px var(--border-light);
+  --shadow-heavy: 0 0 0 1px var(--border-light);
+  --radius-base: 0.5rem;
+  --radius-large: 0.75rem;
+  --transition-main: all 0.2s ease-in-out;
+}
+
+/* Impor spesifik halaman */
+@import './pages/_auth.css';
+@import './pages/_home.css';
+@import './pages/_add-story.css';
+
+/* ===== RESET & DASAR (FONT TETAP SAMA) ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Font-stack dari langkah kita sebelumnya (tetap) */
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--bg-main); /* Menggunakan warna pasir baru */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Aksesibilitas - Tautan Loncat */
+.skip-nav {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  background: var(--brand-primary);
+  color: white;
+  padding: 10px 15px;
+  text-decoration: none;
+  z-index: 10000;
+  transition: var(--transition-main);
+}
+
+.skip-nav:focus {
+  top: 0;
+}
+
+/* Hanya untuk Pembaca Layar */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* ===== KONTAINER ===== */
+.page-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ===== HEADER UTAMA (Desain flat tetap) ===== */
+.main-header {
+  background-color: var(--bg-card); /* Menggunakan warna krim */
+  box-shadow: none;
+  border-bottom: 1px solid var(--border-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.main-header .page-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  gap: 1rem;
+}
+
+.header-brand a {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--brand-primary); /* Warna Terracotta */
+  text-decoration: none;
+}
+
+.header-nav ul {
+  display: flex;
+  list-style: none;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.header-nav a {
+  color: var(--text-dark); /* Warna Coklat tua */
+  text-decoration: none;
+  font-weight: 500;
+  transition: var(--transition-main);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-base);
+}
+
+.header-nav a:hover,
+.header-nav a:focus {
+  color: var(--brand-dark);
+  background-color: var(--brand-light); /* Warna hover terang */
+}
+
+/* ===== KONTEN UTAMA ===== */
+main {
+  flex: 1;
+  padding: 2rem 0;
+  animation: contentFadeIn 0.3s ease-in;
+}
+main:focus {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 5px;
+}
+@keyframes contentFadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== FOOTER UTAMA ===== */
+.main-footer {
+  background-color: var(--bg-main); /* Warna pasir */
+  border-top: 1px solid var(--border-light);
+  padding: 2rem 0;
+  text-align: center;
+  color: var(--text-light); /* Warna Coklat medium */
+  margin-top: 2rem;
+}
+
+/* ===== TOMBOL (BUTTONS) - Desain pill tetap ===== */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+  border-radius: 9999px; /* Tetap bulat penuh */
+  cursor: pointer;
+  transition: var(--transition-main);
+  text-decoration: none;
+  gap: 0.5rem;
+}
+
+.button:focus-visible {
+  outline: 3px solid var(--brand-primary);
+  outline-offset: 2px;
+}
+
+.button-primary {
+  background-color: var(--brand-primary);
+  color: white;
+}
+.button-primary:hover:not(:disabled) {
+  background-color: var(--brand-dark);
+}
+
+.button-secondary {
+  background-color: var(--accent-color); /* Warna Hijau oasis */
+  color: white;
+}
+.button-secondary:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.button-danger {
+  background-color: var(--danger-color);
+  color: white;
+}
+.button-danger:hover:not(:disabled) {
+  opacity: 0.8;
+}
+
+.button-outline {
+  background-color: var(--bg-card);
+  color: var(--text-dark);
+  border: 1px solid var(--border-light);
+}
+.button-outline:hover:not(:disabled) {
+  background-color: var(--bg-main);
+  border-color: var(--brand-primary);
+  color: var(--brand-primary);
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ===== FORMULIR ===== */
+.form-field {
+  margin-bottom: 1.5rem;
+}
+.form-field label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-dark);
+}
+.input-control {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-base);
+  transition: var(--transition-main);
+  background-color: var(--bg-card);
+}
+.input-control:focus {
+  outline: none;
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px var(--brand-light);
+}
+.input-control.invalid {
+  border-color: var(--danger-color);
+}
+.validation-message {
+  color: var(--danger-color);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+.success-message {
+  color: var(--brand-dark);
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* ===== INDIKATOR PEMUATAN ===== */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  gap: 1rem;
+}
+.spinner-dot {
+  border: 4px solid var(--border-light);
+  border-top: 4px solid var(--brand-primary);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== KARTU (CARD) - Desain flat tetap ===== */
+.card-base {
+  background-color: var(--bg-card);
+  border-radius: var(--radius-large);
+  box-shadow: none; 
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  transition: var(--transition-main);
+}
+.card-base:hover {
+  border-color: var(--brand-primary);
+  transform: translateY(-2px);
+}
+.card-base img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ===== UTILITAS ===== */
+.text-center { text-align: center; }
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+
+/* Transisi Tampilan */
+@view-transition {
+  navigation: auto;
+}
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation-duration: 0.3s;
+}
+
+/* ===== STYLE TOMBOL FAVORIT (Tetap) ===== */
+.btn-favorite {
+  display: inline-block;
+  background: none;
+  border: none;
+  font-size: 1.75rem;
+  cursor: pointer;
+  transition: var(--transition-main);
+  padding: 0.25rem;
+  line-height: 1;
+  color: var(--danger-color);
+  opacity: 0.5;
+}
+.btn-favorite:hover {
+  transform: scale(1.2);
+  opacity: 1;
+}
+.btn-favorite:focus-visible {
+  outline: 2px solid var(--brand-primary);
+  outline-offset: 2px;
+  border-radius: 0.25rem;
+}
+.btn-favorite.active {
+  opacity: 1;
+  text-shadow: 0 0 6px rgba(217, 83, 79, 0.7); /* Sesuaikan dengan warna --danger-color */
+}

@@ -1,0 +1,80 @@
+.welcome-banner {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.welcome-banner h2 {
+  font-size: 2.25rem;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.welcome-banner p {
+  font-size: 1.1rem;
+  color: var(--text-light);
+}
+
+.map-section h3,
+.journal-section h3 {
+  font-size: 1.5rem;
+  color: var(--text-dark);
+}
+
+.map-display {
+  width: 100%;
+  min-height: 300px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-light);
+}
+
+.journal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.journal-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.journal-card {
+  cursor: pointer;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.journal-card .card-content {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.journal-card h4 {
+  font-size: 1.25rem;
+  color: var(--text-dark);
+}
+
+.journal-card p {
+  line-height: 1.5;
+}
+
+.button-small {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+}
+
+.find-on-map-btn {
+  margin-top: auto;
+}

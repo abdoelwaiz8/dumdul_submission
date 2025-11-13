@@ -1,0 +1,3 @@
+APP_URL=<url_aplikasi>
+MAP_SERVICE_API_KEY=<api_key>
+NETLIFY_URL=https://frolicking-liger-7bb463.netlify.app/
